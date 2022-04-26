@@ -1,19 +1,22 @@
 package ro.ase.cts.gr1085.tema1;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Main {
+
     public static void main(String[] args) {
-        MasinaFactory masinaFactory = new MasinaFactory();
+        MasinaFactory factory = new MasinaFactory();
 
-        InterfataMasina masinaCuVitezaMica = masinaFactory.getMasina(10);
-        masinaCuVitezaMica.setCuloare("alba");
-        InterfataMasina masinaCuVitezaMedie = masinaFactory.getMasina(50);
-        masinaCuVitezaMedie.setCuloare("rosie");
-        InterfataMasina masinaCuVitezaMare = masinaFactory.getMasina(100);
-        masinaCuVitezaMare.setCuloare("neagra");
+        InterfataMasina galbena = factory.getMasina("galben"); galbena.setNumarulRoti(3);
+        InterfataMasina rosie = factory.getMasina("portocaliu"); rosie.setNumarulRoti(4);
+        InterfataMasina galbena2 = factory.getMasina("galben"); galbena2.setNumarulRoti(8);
 
-        masinaCuVitezaMica.statusMasina();
-        masinaCuVitezaMedie.statusMasina();
-        masinaCuVitezaMare.statusMasina();
+        galbena.afiseaza(); // also shows 30 because we modified the original object
+        rosie.afiseaza();
+        galbena2.afiseaza();
 
     }
 }

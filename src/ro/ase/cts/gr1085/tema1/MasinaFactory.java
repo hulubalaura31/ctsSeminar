@@ -4,22 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MasinaFactory {
-    private static Map<Integer, Masina> lista;
+    private static Map<String, Masina> lista;
 
     public MasinaFactory(){
-        lista = new HashMap<Integer, Masina>();
+        lista = new HashMap<String, Masina>();
     }
 
-    public static InterfataMasina getMasina(int viteza){
-        if(!lista.isEmpty()){
-            if(lista.containsKey(viteza)){
-                return lista.get(viteza);
-            }else{
-                InterfataMasina interfataMasina = new Masina(viteza);
-                lista.put(viteza, (Masina) interfataMasina);
-                return interfataMasina;
-            }
+    public static InterfataMasina getMasina(String culoare){
+        if (lista.containsKey(culoare))
+            return lista.get(culoare);
+        else
+        {
+            InterfataMasina masina = new Masina(culoare);
+            lista.put(culoare, (Masina)masina);
+            return masina;
         }
-        return null;
     }
 }
