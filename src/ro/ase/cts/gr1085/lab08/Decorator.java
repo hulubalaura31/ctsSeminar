@@ -1,4 +1,4 @@
-package ro.ase.cts.gr1085.lab07;
+package ro.ase.cts.gr1085.lab08;
 
 public class Decorator implements InterfataMasina{
     InterfataMasina interfataMasina;
